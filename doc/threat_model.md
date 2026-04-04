@@ -60,7 +60,6 @@ This section lists threats by applying STRIDE at each trust boundaries.
 | ID   | STRIDE   | Threat                                                |
 | ---- | -------- | ----------------------------------------------------- |
 | T1.1 | Spoofing | Attacker impersonates the database server to a legitimate client (rogue server) |
-| T1.2 | Spoofing | Attacker connects to the database without valid identity |
 | T1.3 | Tampering | Attacker intercepts and modifies queries or results in transit (Man-in-the-Middle) |
 | T1.4 | Infomation Discovery | Attacker extracts information by passively captures database network traffic and |
 | T1.5 | DoS | Attacker floods the database with connection attempts, exhausting server resources |
@@ -83,7 +82,6 @@ This section lists threats by applying STRIDE at each trust boundaries.
 | T3.2 | Tampering | Authenticated user modifies or deletes rows outside their permitted scope |
 | T3.3 | Elevation | Low-privilege user escalates to superuser via CREATEROLE or role inheritance |
 | T3.4 | Elevation | Application role accesses system catalogs, server files, or executes OS commands |
-| T3.5 | Repudiation | User accesses or modifies sensitive data but no audit trail exists to prove it |
 | T3.6 | DoS | Authenticated user runs resource-exhausting queries (intentional or accidental) |
 
 ### Threats at B4 — Storage boundary
@@ -91,9 +89,6 @@ This section lists threats by applying STRIDE at each trust boundaries.
 | ID   | STRIDE   | Threat                                                |
 | ---- | -------- | ----------------------------------------------------- |
 | T4.1 | Information discovery | Attacker obtains a disk image, snapshot, or physical drive and reads raw data files offline |
-| T4.2 | Information discovery | Attacker with live shell access reads table data files directly through the mounted filesystem, bypassing all database-level controls |
-| T4.3 | Information discovery | Attacker with live shell access reads pg_wal/ directory and extracts plaintext data changes from WAL segments |
-| T4.4 | Information discovery | Attacker with live shell access reads pgcrypto-encrypted columns from data files, but cannot decrypt them without the application-layer key |
 | T4.5 | Tampering | Attacker modifies data files on disk (corruption or targeted alteration) |
 | T4.6 | Elevation | Database superuser reads arbitrary server files via built-in functions (pg_read_file, COPY) |
 
