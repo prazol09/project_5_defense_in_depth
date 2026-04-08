@@ -13,7 +13,7 @@ flowchart LR
             CA[CA Certificatre]
             PK[Private Key - PK]
         end
-        subgraph I [Intermediate CA]
+        subgraph I[Intermediate CA]
             ICA[Certificate]
             IPK[Private Key - PK]
         end
@@ -40,18 +40,14 @@ flowchart LR
         end
 
         subgraph DB [PostgreSQL, Baackup & Recovery Mecanism]
-            LKS@{ shape: cyl, label: "LUKS"}
-            POS[PostgreSQL]:::big
+            POS[Postgres]:::big
             WAL[WAL-G]
-            TPM[TPM 2.0]
         end
         Clients --> Proxy
         Proxy --> POS
         Proxy --> CRL
-        POS --> LKS
         POS --archive_command--> WAL
         WAL --backup_push--> POS
-        TPM --> LKS
     end
     subgraph DBB [Backup]
         LOG@{ shape: cyl, label: "MinIO"}
