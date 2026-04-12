@@ -1,12 +1,5 @@
 # Defense-in-Depth: System Design
 
-The following diagram represents the overall workings of the database system that is able to handle various threats that are stated in the threat model.
-
-
-- Use proxy server/s (HAProxy | PgBouncer | ProxySQL ) to perfrm security checks and handle DOS attacks.
-- Set statement_timeout on db server which aborts any statement that takes more than the specified time.
-- Use WAL-G for maintaining Physical Backups and Point-in-Time Recovery (PITR)
-- Use Network File System (NFS), a folder that lives on a different server but is mounted so it looks like a local folder on the DB server, to store database logs.
 ```mermaid
 ---
 config:
@@ -20,7 +13,7 @@ flowchart LR
             CA[CA Certificatre]
             PK[Private Key - PK]
         end
-        subgraph I [Intermediate CA]
+        subgraph I[Intermediate CA]
             ICA[Certificate]
             IPK[Private Key - PK]
         end
@@ -41,26 +34,26 @@ flowchart LR
         end
         
         subgraph Server [ Servers with CA Certificates & PK]
-            App[Web Server]
-            Proxy[Proxy Server]
+            Proxy[PgBouncer]:::big
+            classDef big font-size:25px,font-weight:bold;
+            CRL[CRL Server]
         end
 
-        subgraph DB [PostgreSQL & Recovery Mecanism]
-            LKS@{ shape: cyl, label: "LUKS"}
-            POS[PostgreSQL]
+        subgraph DB [PostgreSQL, Baackup & Recovery Mecanism]
+            POS[Postgres]:::big
             WAL[WAL-G]
         end
-        Clients --> App
-        App --> Proxy
+        Clients --> Proxy
         Proxy --> POS
-        POS --> LKS
-        POS --> WAL
+        Proxy --> CRL
+        POS --archive_command--> WAL
+        WAL --backup_push--> POS
     end
-    subgraph DBB [Backup Servers]
-        BKP@{ shape: cyl, label: "DB Clone"}
-        LOG[DB Logs]
+    subgraph DBB [Backup]
+        LOG@{ shape: cyl, label: "MinIO"}
+        
         WAL[WAL-G]
     end
-    WAL --> BKP
-    WAL --> LOG    
+    WAL --S3 protocol--> LOG
+    WAL --WAL--> LOG  
 ```
