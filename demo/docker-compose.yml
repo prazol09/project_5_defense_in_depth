@@ -3,14 +3,19 @@ services:
     image: postgres:16
     container_name: postgres
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: threatdb
-      POSTGRES_HOST_AUTH_METHOD: password
+      POSTGRES_USER_FILE: /run/secrets/db_user
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_password
+      POSTGRES_DB_FILE: /run/secrets/db_name
+      POSTGRES_HOST_AUTH_METHOD: scram-sha-256
     command: >
       postgres
       -c ssl=off
       -c log_connections=on
+      -c password_encryption=scram-sha-256
+    secrets:
+      - db_user
+      - db_password
+      - db_name
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
@@ -30,6 +35,14 @@ services:
         ipv4_address: 172.20.0.20
     depends_on:
       - postgres
+
+secrets:
+  db_user:
+    file: ./secrets/db_user.txt
+  db_password:
+    file: ./secrets/db_password.txt
+  db_name:
+    file: ./secrets/db_name.txt
 
 networks:
   intranet:
