@@ -7,6 +7,8 @@ services:
       POSTGRES_PASSWORD_FILE: /run/secrets/db_password
       POSTGRES_DB_FILE: /run/secrets/db_name
       POSTGRES_HOST_AUTH_METHOD: scram-sha-256
+    ports:
+      - 5432:5432
     command: >
       postgres
       -c ssl=off

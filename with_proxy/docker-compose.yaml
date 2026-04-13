@@ -1,0 +1,72 @@
+services:
+
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydb
+    networks:
+      - backend
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./certs/server.crt:/var/lib/postgresql/server.crt:ro
+      - ./certs/server.key:/var/lib/postgresql/server.key
+      - ./certs/ca-chain.cert.pem:/var/lib/postgresql/ca.crt:ro
+    command:
+      - bash
+      - -c
+      - |
+        cp /var/lib/postgresql/server.key /tmp/server.key
+        chown postgres:postgres /tmp/server.key
+        chmod 0600 /tmp/server.key
+        exec docker-entrypoint.sh postgres \
+          -c ssl=on \
+          -c ssl_cert_file=/var/lib/postgresql/server.crt \
+          -c ssl_key_file=/tmp/server.key \
+          -c ssl_ca_file=/var/lib/postgresql/ca.crt
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  database:
+    image: edoburu/pgbouncer
+    environment:
+      DATABASE_URL: postgres://postgres:password@postgres:5432/mydb
+      AUTH_TYPE: scram-sha-256
+      SERVER_TLS_SSLMODE: require
+      SERVER_TLS_CA_FILE: /etc/pgbouncer/certs/ca.crt
+      CLIENT_TLS_SSLMODE: verify-ca
+      CLIENT_TLS_CERT_FILE: /etc/pgbouncer/certs/pgbouncer.crt
+      CLIENT_TLS_KEY_FILE: /etc/pgbouncer/certs/pgbouncer.key
+      CLIENT_TLS_CA_FILE: /etc/pgbouncer/certs/ca.crt
+    networks:
+      - backend
+      - frontend
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./certs/ca-chain.cert.pem:/etc/pgbouncer/certs/ca.crt:ro
+      - ./certs/pgbouncer.crt:/etc/pgbouncer/certs/pgbouncer.crt:ro
+      - ./certs/pgbouncer.key:/etc/pgbouncer/certs/pgbouncer.key
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  client:
+    image: debian:trixie
+    networks:
+      - frontend
+    volumes:
+      - ./certs/client.crt:/certs/client.crt:ro
+      - ./certs/client.key:/certs/client.key:ro
+      - ./certs/ca-chain.cert.pem:/certs/ca.crt:ro
+    command: sleep infinity
+    depends_on:
+      - database
+
+networks:
+  backend:
+  frontend:

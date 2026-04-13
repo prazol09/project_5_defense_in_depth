@@ -1,0 +1,115 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 4096 (0x1000)
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=US, ST=New Hampshihre, O=Southern New Hampshire University, OU=SETA, CN=CS590-INTERMEDIATE
+        Validity
+            Not Before: Apr  9 18:33:01 2026 GMT
+            Not After : Apr  8 18:33:01 2028 GMT
+        Subject: C=US, ST=New Hampshire, L=Manchester, O=Southern New Hampshire University, OU=SETA, CN=database
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:ba:31:b8:84:7e:c1:a9:08:cd:93:42:ff:d2:95:
+                    aa:b5:4e:a8:4c:64:b0:9e:45:5c:6f:3c:d7:fa:32:
+                    df:de:24:a7:88:76:8d:be:2a:93:85:ca:46:32:1d:
+                    ec:4b:55:67:d7:c5:8c:fc:10:d7:c6:aa:77:c7:35:
+                    bf:b8:a9:28:d7:91:9a:cd:ee:33:e9:d2:ec:38:26:
+                    83:12:ef:47:3d:f6:21:63:06:29:aa:86:79:10:f6:
+                    de:7f:64:55:44:39:de:1f:34:71:7b:dc:f2:6b:2c:
+                    db:f3:9c:1c:d5:70:f7:32:9a:25:ce:e6:8a:3d:3b:
+                    db:e7:18:31:e5:1c:ee:ee:14:44:a5:fe:7f:eb:83:
+                    23:c5:87:e3:7a:a1:8d:2d:83:5a:a9:17:75:b4:67:
+                    91:d1:2e:c2:2d:21:25:82:40:95:19:86:e3:d7:09:
+                    ca:47:bc:ac:5f:7b:99:75:17:c5:59:49:4e:29:ce:
+                    f7:cc:b1:cb:b1:bd:b3:b7:55:c7:22:50:31:05:37:
+                    b3:7a:3a:b3:67:c3:c2:eb:c8:3c:22:a1:c1:50:58:
+                    c4:34:ef:80:79:de:be:bf:3c:a6:76:9d:d2:30:c7:
+                    69:49:2f:c0:ab:85:9a:ce:e0:1e:73:92:3c:e1:1f:
+                    63:8c:34:09:2d:db:87:2b:29:26:c8:59:59:e8:08:
+                    36:f3
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Cert Type: 
+                SSL Server
+            Netscape Comment: 
+                OpenSSL Generated Server Certificate
+            X509v3 Subject Key Identifier: 
+                E2:2D:70:EC:AC:F2:BC:6D:48:40:3E:BE:1E:86:58:2B:F9:80:9C:D9
+            X509v3 Authority Key Identifier: 
+                keyid:7E:B4:48:CD:0E:8E:46:A9:EF:28:4F:E4:1D:37:20:91:24:82:9E:FD
+                DirName:/C=US/ST=New Hampshihre/L=Manchester/O=Southern New Hampshire University/OU=SETA/CN=CS590-ROOT
+                serial:10:00
+            X509v3 Key Usage: critical
+                Digital Signature, Key Encipherment
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication
+    Signature Algorithm: sha256WithRSAEncryption
+    Signature Value:
+        64:f4:5f:ac:7f:6b:74:27:dd:c4:55:0d:37:a8:9d:cb:29:f3:
+        b8:5f:96:2f:24:9a:8a:45:e4:e7:d9:05:9e:ae:1d:bf:50:7d:
+        ca:cc:b0:51:dd:ea:94:6f:e7:66:7e:50:63:c4:70:4e:76:26:
+        41:a3:01:86:16:77:79:6f:24:8c:af:17:7e:44:bb:27:91:10:
+        5e:63:20:6b:e7:57:98:ee:de:e4:98:90:59:5a:2e:30:46:40:
+        dc:1f:0f:e8:e5:59:00:e8:50:70:7b:83:1f:d8:56:e5:b4:fe:
+        88:58:b1:74:58:31:1a:6e:c9:9e:88:93:d7:dc:3c:28:49:bf:
+        cf:41:61:09:2d:59:b3:98:eb:43:15:00:2f:d9:80:fa:51:77:
+        98:54:af:7d:40:4b:d0:96:de:e2:1b:37:80:14:be:4f:36:ff:
+        1f:72:98:ab:a8:f9:7b:85:ec:4e:76:aa:86:d5:1e:67:57:6e:
+        ee:c0:bc:e0:ff:e3:a1:f0:be:a0:a1:22:dd:cc:0b:9b:e4:a6:
+        42:02:53:06:59:5f:a7:2d:39:88:c2:7a:da:75:1d:d7:c0:d3:
+        22:4c:f4:e5:3b:a8:84:37:fa:ea:98:78:91:1a:27:9f:e1:a7:
+        f8:f8:da:af:56:95:b8:ef:ac:0f:08:19:8f:19:26:39:4a:b1:
+        3e:f5:47:60:86:85:79:80:86:79:f0:f2:c2:b2:8a:6c:34:1f:
+        ee:7f:5d:07:d2:d6:b9:be:80:19:ca:e6:db:3e:b2:10:ca:3b:
+        11:17:bb:0d:71:9f:1d:b2:97:b1:c3:54:b7:44:b0:84:86:59:
+        04:42:fd:bc:cd:46:bf:32:03:c8:bc:88:b5:81:ea:c9:dd:c1:
+        47:ce:c2:b0:bd:b3:b2:a9:08:6c:c6:c9:85:91:83:5f:ba:a7:
+        85:7c:4c:23:90:0f:09:df:51:a8:30:8d:85:04:c6:45:c4:1e:
+        4c:ef:93:33:bd:65:6d:14:84:37:e5:ce:43:ff:1a:dc:81:da:
+        82:e5:9c:1b:11:c6:0b:25:2a:f4:dc:02:9d:a8:b2:67:8d:e1:
+        ed:3a:a0:ca:32:a1:20:61:6b:35:b9:59:4b:23:a3:e0:cf:23:
+        70:3e:41:9c:de:85:18:87:d2:48:b2:2e:93:53:49:43:76:bb:
+        2e:b3:f3:b1:ff:19:54:c6:b2:4e:b9:1e:79:02:8b:be:da:91:
+        16:fc:49:d4:9d:f3:a1:d7:9b:1e:f2:a5:25:8c:c6:f1:69:80:
+        82:b8:6f:a6:01:85:de:45:50:63:60:4e:24:0e:ef:ae:57:66:
+        bc:cb:1a:fc:64:ce:a2:ce:a0:ac:27:18:7b:c9:1a:ec:cf:52:
+        d5:be:53:fe:16:ac:9a:b8
+-----BEGIN CERTIFICATE-----
+MIIF3DCCA8SgAwIBAgICEAAwDQYJKoZIhvcNAQELBQAwfjELMAkGA1UEBhMCVVMx
+FzAVBgNVBAgMDk5ldyBIYW1wc2hpaHJlMSowKAYDVQQKDCFTb3V0aGVybiBOZXcg
+SGFtcHNoaXJlIFVuaXZlcnNpdHkxDTALBgNVBAsMBFNFVEExGzAZBgNVBAMMEkNT
+NTkwLUlOVEVSTUVESUFURTAeFw0yNjA0MDkxODMzMDFaFw0yODA0MDgxODMzMDFa
+MIGIMQswCQYDVQQGEwJVUzEWMBQGA1UECAwNTmV3IEhhbXBzaGlyZTETMBEGA1UE
+BwwKTWFuY2hlc3RlcjEqMCgGA1UECgwhU291dGhlcm4gTmV3IEhhbXBzaGlyZSBV
+bml2ZXJzaXR5MQ0wCwYDVQQLDARTRVRBMREwDwYDVQQDDAhkYXRhYmFzZTCCASIw
+DQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALoxuIR+wakIzZNC/9KVqrVOqExk
+sJ5FXG881/oy394kp4h2jb4qk4XKRjId7EtVZ9fFjPwQ18aqd8c1v7ipKNeRms3u
+M+nS7DgmgxLvRz32IWMGKaqGeRD23n9kVUQ53h80cXvc8mss2/OcHNVw9zKaJc7m
+ij072+cYMeUc7u4URKX+f+uDI8WH43qhjS2DWqkXdbRnkdEuwi0hJYJAlRmG49cJ
+yke8rF97mXUXxVlJTinO98yxy7G9s7dVxyJQMQU3s3o6s2fDwuvIPCKhwVBYxDTv
+gHnevr88pnad0jDHaUkvwKuFms7gHnOSPOEfY4w0CS3bhyspJshZWegINvMCAwEA
+AaOCAVcwggFTMAkGA1UdEwQCMAAwEQYJYIZIAYb4QgEBBAQDAgZAMDMGCWCGSAGG
++EIBDQQmFiRPcGVuU1NMIEdlbmVyYXRlZCBTZXJ2ZXIgQ2VydGlmaWNhdGUwHQYD
+VR0OBBYEFOItcOys8rxtSEA+vh6GWCv5gJzZMIG5BgNVHSMEgbEwga6AFH60SM0O
+jkap7yhP5B03IJEkgp79oYGRpIGOMIGLMQswCQYDVQQGEwJVUzEXMBUGA1UECAwO
+TmV3IEhhbXBzaGlocmUxEzARBgNVBAcMCk1hbmNoZXN0ZXIxKjAoBgNVBAoMIVNv
+dXRoZXJuIE5ldyBIYW1wc2hpcmUgVW5pdmVyc2l0eTENMAsGA1UECwwEU0VUQTET
+MBEGA1UEAwwKQ1M1OTAtUk9PVIICEAAwDgYDVR0PAQH/BAQDAgWgMBMGA1UdJQQM
+MAoGCCsGAQUFBwMBMA0GCSqGSIb3DQEBCwUAA4ICAQBk9F+sf2t0J93EVQ03qJ3L
+KfO4X5YvJJqKReTn2QWerh2/UH3KzLBR3eqUb+dmflBjxHBOdiZBowGGFnd5bySM
+rxd+RLsnkRBeYyBr51eY7t7kmJBZWi4wRkDcHw/o5VkA6FBwe4Mf2FbltP6IWLF0
+WDEabsmeiJPX3DwoSb/PQWEJLVmzmOtDFQAv2YD6UXeYVK99QEvQlt7iGzeAFL5P
+Nv8fcpirqPl7hexOdqqG1R5nV27uwLzg/+Oh8L6goSLdzAub5KZCAlMGWV+nLTmI
+wnradR3XwNMiTPTlO6iEN/rqmHiRGief4af4+NqvVpW476wPCBmPGSY5SrE+9Udg
+hoV5gIZ58PLCsopsNB/uf10H0ta5voAZyubbPrIQyjsRF7sNcZ8dspexw1S3RLCE
+hlkEQv28zUa/MgPIvIi1gerJ3cFHzsKwvbOyqQhsxsmFkYNfuqeFfEwjkA8J31Go
+MI2FBMZFxB5M75MzvWVtFIQ35c5D/xrcgdqC5ZwbEcYLJSr03AKdqLJnjeHtOqDK
+MqEgYWs1uVlLI6PgzyNwPkGc3oUYh9JIsi6TU0lDdrsus/Ox/xlUxrJOuR55Aou+
+2pEW/EnUnfOh15se8qUljMbxaYCCuG+mAYXeRVBjYE4kDu+uV2a8yxr8ZM6izqCs
+Jxh7yRrsz1LVvlP+FqyauA==
+-----END CERTIFICATE-----
