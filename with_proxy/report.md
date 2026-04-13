@@ -101,6 +101,15 @@ All certificates are signed by the intermediate CA and verified against the full
 | `certs/pgbouncer.crt` / `pgbouncer.key` | PgBouncer server certificate and private key (CN=database) |
 | `certs/client.crt` / `client.key` | Client certificate and private key (CN=client, extendedKeyUsage=clientAuth) |
 
+### Connecting to the Database
+
+From within the client container, connect to the database through PgBouncer as the `finance` user:
+
+```bash
+psql "host=database port=5432 dbname=mydb user=finance password=finance_pass \
+  sslmode=require sslcert=/certs/client.crt sslkey=/certs/client.key sslrootcert=/certs/ca.crt"
+```
+
 ## 3. Audit Results
 
 The following tests were executed against the running `with_proxy` stack to verify each security layer.
